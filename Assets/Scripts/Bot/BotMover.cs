@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class BotMove : MonoBehaviour
+public class BotMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _gravityFactor;
@@ -54,7 +54,7 @@ public class BotMove : MonoBehaviour
                 float Angle = Mathf.Atan2(vector3.x, vector3.z) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, Angle, 0);
 
-                stepClimb();
+                ClimbStep();
             }
         }
         else
@@ -63,7 +63,7 @@ public class BotMove : MonoBehaviour
         }
     }
 
-    void stepClimb()
+    private void ClimbStep()
     {
         RaycastHit hitLower;
         if (Physics.Linecast(stepRayLower.transform.position, stepRayLower.transform.position + stepRayLower.transform.forward * stepRayLowerLength, out hitLower, _groundMask))

@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMove : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _gravityFactor;
 
     private CharacterController _controller;
-    private Transform _transform;
 
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        _transform = transform;
     }
    
     public void Move(Vector3 playerImput)

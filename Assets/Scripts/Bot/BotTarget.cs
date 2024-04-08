@@ -4,18 +4,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-[RequireComponent(typeof(BotMove))]
-public class BotControler : MonoBehaviour
+[RequireComponent(typeof(BotMover))]
+public class BotTarget : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float _stopDistance;
 
     private Transform _transform;
-    private BotMove _move;
+    private BotMover _move;
 
     private void Awake()
     {
-        _move = GetComponent<BotMove>();
+        _move = GetComponent<BotMover>();
         _transform = transform;
     }
 

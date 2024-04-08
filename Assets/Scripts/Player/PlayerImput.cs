@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMove))]
-public class PlayerControler : MonoBehaviour
+[RequireComponent(typeof(PlayerMover))]
+public class PlayerImput : MonoBehaviour
 {
-    private PlayerMove _playerMove;
+    private PlayerMover _playerMove;
 
     private void Awake()
     {
-        _playerMove = GetComponent<PlayerMove>();
+        _playerMove = GetComponent<PlayerMover>();
     }
 
     private void FixedUpdate()
